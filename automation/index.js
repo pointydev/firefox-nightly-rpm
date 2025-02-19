@@ -14,7 +14,7 @@ function whiteSpaces(amount) {
 }
 
 const downloadUrl = await fetch(
-  'https://download.mozilla.org/download/en-US/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US',
+  'https://download.mozilla.org/download/en-US/?product=firefox-nightly-latest-ssl&os=linux64&lang=en-US',
   {
     compress: true,
     redirect: 'manual',
@@ -24,7 +24,7 @@ if (!downloadUrl) throw new Error('Failed to fetch download URL');
 
 const version = path.parse(downloadUrl).name.split('-')[1].slice(0, -4);
 
-const specFile = await fs.readFile('../firefox-developer-edition.spec', 'utf8');
+const specFile = await fs.readFile('../firefox-nightly.spec', 'utf8');
 
 /**
  *
@@ -48,6 +48,6 @@ function specUpdater(content, version) {
 }
 
 await fs.writeFile(
-  '../firefox-developer-edition.spec',
+  '../firefox-nightly.spec',
   specUpdater(specFile, version),
 );
