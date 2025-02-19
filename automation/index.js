@@ -22,7 +22,7 @@ const downloadUrl = await fetch(
 ).then((res) => res.headers.get('location'));
 if (!downloadUrl) throw new Error('Failed to fetch download URL');
 
-const version = path.parse(downloadUrl).name.split('-')[1].slice(0, -4);
+const version = path.parse(downloadUrl).name.split('-')[1].slice(0, -3);
 
 const specFile = await fs.readFile('../firefox-nightly.spec', 'utf8');
 
