@@ -12,7 +12,7 @@ Summary:            Firefox Nightly unstable Web browser
 
 License:            MPLv1.1 or GPLv2+ or LGPLv2+
 URL:                https://www.mozilla.org/en-US/firefox/nightly/
-Source0:            https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central/firefox-%{lua:string.gsub("%%{version}", "%^.*", "")}.en-US.linux-x86_64.tar.xz
+Source0:            https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central/firefox-%{short_version}.en-US.linux-x86_64.tar.xz
 Source1:            %{internal_name}.desktop
 Source2:            policies.json
 Source3:            %{internal_name}
