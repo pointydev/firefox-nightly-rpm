@@ -5,7 +5,7 @@
 %global             debug_package %{nil}
 
 Name:               firefox-nightly
-Version:            137.0a1
+Version:            137.0a1^20250219215346
 Release:            0%\{?dist}
 Summary:            Firefox Nightly unstable Web browser
 
