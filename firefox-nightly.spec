@@ -6,7 +6,7 @@
 
 Name:               firefox-nightly
 Version:            137.0a1
-Release:            1%{?dist}
+Release:            0%\{?dist}
 Summary:            Firefox Nightly unstable Web browser
 
 License:            MPLv1.1 or GPLv2+ or LGPLv2+
