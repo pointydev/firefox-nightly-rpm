@@ -6,7 +6,7 @@
 
 Name:               firefox-nightly
 Version:            137.0a1^20250219215346
-Release:            0%\{?dist}
+Release:            0%{?dist}
 Summary:            Firefox Nightly unstable Web browser
 
 License:            MPLv1.1 or GPLv2+ or LGPLv2+
@@ -75,5 +75,3 @@ gtk-update-icon-cache -f -t %{_datadir}/icons/hicolor
 %{_datadir}/icons/hicolor/16x16/apps/%{full_name}.png
 %{_bindir}/%{internal_name}
 /opt/%{application_name}
-
-%changelog
