@@ -34,23 +34,32 @@ async function updateSpecWithBuildInfo() {
         throw new Error('Missing version or buildid in JSON build info');
     }
     const newVersion = `${versionFromJson}^${buildId}`;
+    const shortVersion = versionFromJson;
     console.log(`New version: ${newVersion}`);
 
     // Read the current RPM spec file.
     const specFilePath = path.join('..', 'firefox-nightly.spec');
     const specContent = await fs.readFile(specFilePath, 'utf8');
 
-    // Update the Version line, using exactly 12 spaces after "Version:".
-    function specUpdater(content, newVersion) {
-        if (!content || !newVersion) throw new Error('Invalid content or version');
+    // Update the Version line and the %global short_version line.
+    function specUpdater(content, newVersion, shortVersion) {
+        if (!content || !newVersion || !shortVersion) throw new Error('Invalid content or version');
         const lines = content.split('\n');
+
+        // Update the Version line with exactly 12 spaces after "Version:".
         const versionLineIndex = lines.findIndex(line => line.startsWith('Version:'));
         if (versionLineIndex < 0) throw new Error('Failed to find Version: line in spec file');
         lines[versionLineIndex] = `Version:            ${newVersion}`;
+
+        // Update the %global short_version line.
+        const shortVersionIndex = lines.findIndex(line => line.trim().startsWith('%global             short_version'));
+        if (shortVersionIndex < 0) throw new Error('short_version line not found in spec file');
+        lines[shortVersionIndex] = `%global             short_version ${shortVersion}`;
+
         return lines.join('\n');
     }
 
-    const updatedSpecContent = specUpdater(specContent, newVersion);
+    const updatedSpecContent = specUpdater(specContent, newVersion, shortVersion);
 
     // Write the updated content back to the spec file.
     await fs.writeFile(specFilePath, updatedSpecContent);

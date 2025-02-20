@@ -3,6 +3,7 @@
 %global             full_name firefox-nightly
 %global             internal_name firefox-nightly
 %global             debug_package %{nil}
+%global             short_version 137.0a1
 
 Name:               firefox-nightly
 Version:            137.0a1^20250219215346
@@ -11,7 +12,7 @@ Summary:            Firefox Nightly unstable Web browser
 
 License:            MPLv1.1 or GPLv2+ or LGPLv2+
 URL:                https://www.mozilla.org/en-US/firefox/nightly/
-Source0:            https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central/firefox-%{version}.en-US.linux-x86_64.tar.xz
+Source0:            https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central/firefox-%{lua:string.gsub("%%{version}", "%^.*", "")}.en-US.linux-x86_64.tar.xz
 Source1:            %{internal_name}.desktop
 Source2:            policies.json
 Source3:            %{internal_name}
