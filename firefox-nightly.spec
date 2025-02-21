@@ -65,7 +65,7 @@ Based on: <https://github.com/the4runner/firefox-dev/>
 %__ln_s ../../../../../../opt/%{application_name}/browser/chrome/icons/default/default16.png %{buildroot}%{_datadir}/icons/hicolor/16x16/apps/%{full_name}.png
 
 %post
-gtk-update-icon-cache -f -t %{_datadir}/icons/hicolor
+gtk-update-icon-cache -ftq %{_datadir}/icons/hicolor
 
 %files
 %{_datadir}/applications/%{internal_name}.desktop
