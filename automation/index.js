@@ -22,17 +22,16 @@ async function updateSpecWithBuildInfo() {
     if (!versionFromJson || !buildId) throw new Error('Missing version and buildid in JSON build info');
 
     const newVersion = `${versionFromJson}^${buildId}`;
-    console.log(`New version: ${newVersion}`);
 
     // Read and update spec file.
     const specFilePath = path.join('..', 'firefox-nightly.spec');
     let specContent = await fs.readFile(specFilePath, 'utf8');
     specContent = specContent
-    .replace(/^(Version:\s{12}).*$/m, `$1${newVersion}`)
-    .replace(/^(%global\s{13}short_version\s+).+$/m, `$1${versionFromJson}`);
-
+        .replace(/^(Version:\s{12}).*$/m, `$1${newVersion}`)
+        .replace(/^(%global\s{13}short_version\s+).+$/m, `$1${versionFromJson}`);
     await fs.writeFile(specFilePath, specContent);
-    console.log('Spec file updated successfully.');
+
+    console.log(`NEW_VERSION=${newVersion}`);
 }
 
 updateSpecWithBuildInfo().catch(err => {
