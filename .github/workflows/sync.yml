@@ -1,4 +1,4 @@
-name: Daily sync
+name: mozilla-central Sync
 
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -21,8 +21,8 @@ jobs:
 
       - name: Run Git Configurations
         run: |
-          git config --local user.name "Github Action Runner"
-          git config --local user.email "github-action-runner@example.com"
+          git config --local user.name "mozilla-central Sync"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Execute version update
         run: |
