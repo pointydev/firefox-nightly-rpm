@@ -3,10 +3,10 @@
 %global             full_name firefox-nightly
 %global             internal_name firefox-nightly
 %global             debug_package %{nil}
-%global             short_version 137.0a1
+%global             short_version 138.0a1
 
 Name:               firefox-nightly
-Version:            137.0a1^20250303090051
+Version:            138.0a1^20250308090017
 Release:            0%{?dist}
 Summary:            Firefox Nightly unstable Web browser
 
