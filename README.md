@@ -20,7 +20,7 @@ and try ideas.
 
 Note: Firefox Nightly will update approximately once or twice a day.
 
-Bugs related to Firefox Developer Edition should be reported directly to Mozilla: [https://bugzilla.mozilla.org](https://bugzilla.mozilla.org)
+Bugs related to Firefox Nightly should be reported directly to Mozilla: [https://bugzilla.mozilla.org](https://bugzilla.mozilla.org)
 
 Bugs related to this package should be reported at this GitHub project:
 [https://github.com/pointydev/firefox-nightly-rpm/issues](https://github.com/pointydev/firefox-nightly-rpm/issues)
