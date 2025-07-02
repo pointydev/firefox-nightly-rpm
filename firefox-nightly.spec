@@ -22,6 +22,8 @@ ExclusiveArch:      x86_64
 Recommends:         (plasma-browser-integration if plasma-workspace)
 Recommends:         (gnome-browser-connector if gnome-shell)
 
+BuildRequires:      chrpath
+
 Requires(post):     gtk-update-icon-cache
 
 %description
@@ -51,6 +53,8 @@ Based on: <https://github.com/the4runner/firefox-dev/>
 %__install -d %{buildroot}{/opt/%{application_name},%{_bindir},%{_datadir}/applications,%{_datadir}/icons/hicolor/128x128/apps,%{_datadir}/icons/hicolor/64x64/apps,%{_datadir}/icons/hicolor/48x48/apps,%{_datadir}/icons/hicolor/32x32/apps,%{_datadir}/icons/hicolor/16x16/apps}
 
 %__cp -r * %{buildroot}/opt/%{application_name}
+#ERROR   0002: file '/opt/firefox-nightly/libonnxruntime.so' contains an invalid runpath '$' in [$]
+chrpath --delete %{buildroot}/opt/%{application_name}/libonnxruntime.so || :
 
 %__install -D -m 0644 %{SOURCE1} -t %{buildroot}%{_datadir}/applications
 
