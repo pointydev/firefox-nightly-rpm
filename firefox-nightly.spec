@@ -6,7 +6,7 @@
 %global             short_version 145.0a1
 
 Name:               firefox-nightly
-Version:            145.0a1^20251002211313
+Version:            145.0a1^20251003092920
 Release:            0%{?dist}
 Summary:            Firefox Nightly unstable Web browser
 
