@@ -1,6 +1,10 @@
 { 
     "policies": {
-        "DisableAppUpdate": true
+        "DisableAppUpdate": true,
+        "SupportMenu": {
+            "Title": "firefox-nightly Copr by pointy",
+            "URL": "https://copr.fedorainfracloud.org/coprs/pointy/firefox-nightly/"
+        }
     } 
 }
 
